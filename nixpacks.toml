@@ -5,10 +5,7 @@ nixPkgs = ["nodejs-18_x", "npm-9_x", "openssl"]
 cmds = ["npm ci"]
 
 [phases.build]
-cmds = [
-  "npx prisma db push",
-  "npm run build"
-]
+cmds = ["npm run build"]
 
 [start]
-cmd = "npm start"
+cmd = "npx prisma db push && npm start"
